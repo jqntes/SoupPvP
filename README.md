@@ -3,7 +3,17 @@
  
 ## Disclaimer
 This is just a base for making a SoupPvP plugin for your server.
-Gangatron
+
+## Features being working on
+Killstreaks System- WIP
+
+Events System - TBD
+
+Cooldown System
+
+
+
+
 
 ### Usage terms:
   * You cannot claim that this was all made from scratch by you.
