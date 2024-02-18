@@ -57,7 +57,11 @@ public class GameListener implements Listener {
             player.sendMessage("Open Events Menu");
         } else if (event.getItem().equals(PLAYER_PERKS)) {
             player.sendMessage("Open Perks Menu");
-        } else if (event.getItem().equals(PREVIOUS_KIT)) {
+        } else if (event.getItem().equals(KILLSTREAK_MENU)) {
+            player.sendMessage("Open Killstreaks Menu");
+
+
+    } else if (event.getItem().equals(PREVIOUS_KIT)) {
             if (user.getCurrentKitName() == null) {
                 this.plugin.getKitManager().getKitByName("Default").equipKit(player);
             } else {
@@ -65,7 +69,9 @@ public class GameListener implements Listener {
             }
         } else if (event.getItem().getType().equals(Material.SKULL_ITEM)) {
             sendStats(player, user);
+
         }
+
     }
 
     @EventHandler

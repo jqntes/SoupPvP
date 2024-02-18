@@ -22,7 +22,7 @@ public class ServerScoreboard implements BoardAdapter {
 
     @Override
     public String getTitle(Player player) {
-        return translate("&b&lSoupPvP");
+        return translate("&b&lHCArctic | Map I");
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ServerScoreboard implements BoardAdapter {
         strings.add(translate("&cCombat Tag&7: &f" + plugin.getCombatManager().getCombatTime(player) + "s"));
         }
         strings.add(translate(" "));
-        strings.add(translate("&bfrozed.club"));
+        strings.add(translate("&bme.marlinis"));
         strings.add(translate("&7&m----------------------"));
 
         return strings;

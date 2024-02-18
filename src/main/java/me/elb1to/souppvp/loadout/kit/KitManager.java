@@ -1,10 +1,7 @@
 package me.elb1to.souppvp.loadout.kit;
 
 import lombok.Getter;
-import me.elb1to.souppvp.loadout.kit.impl.CopyCatKit;
-import me.elb1to.souppvp.loadout.kit.impl.DefaultKit;
-import me.elb1to.souppvp.loadout.kit.impl.NinjaKit;
-import me.elb1to.souppvp.loadout.kit.impl.ProKit;
+import me.elb1to.souppvp.loadout.kit.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +21,9 @@ public class KitManager {
         kits.add(new ProKit());
         kits.add(new CopyCatKit());
         kits.add(new NinjaKit());
+        kits.add(new ChemistKit());
+        kits.add(new StomperKit());
+        kits.add(new EnderKit());
     }
 
     public Kit getKitByName(String name) {

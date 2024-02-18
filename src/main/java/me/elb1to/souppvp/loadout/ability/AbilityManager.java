@@ -1,7 +1,10 @@
 package me.elb1to.souppvp.loadout.ability;
 
 import lombok.Getter;
+import me.elb1to.souppvp.loadout.ability.impl.ChemistAbility;
+import me.elb1to.souppvp.loadout.ability.impl.PearlAbility;
 import me.elb1to.souppvp.loadout.ability.impl.ShurikenAbility;
+import me.elb1to.souppvp.loadout.ability.impl.StompAbility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,9 @@ public class AbilityManager {
 
     public AbilityManager() {
         abilities.add(new ShurikenAbility());
+        abilities.add(new ChemistAbility());
+        abilities.add(new StompAbility());
+        abilities.add(new PearlAbility());
     }
 
     public Ability getAbilityByName(String name) {

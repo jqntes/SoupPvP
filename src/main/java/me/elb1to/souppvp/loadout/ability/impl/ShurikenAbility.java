@@ -7,7 +7,11 @@ import me.elb1to.souppvp.utils.ItemBuilder;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
@@ -28,22 +32,33 @@ public class ShurikenAbility extends Ability {
 
     @Override
     public long getCooldown() {
-        return 0L;
+        return 20L;
     }
 
     @Override // This ability is unfinished, so don't fuckin spam my dms.
     public AbilityCallable getCallable() {
         return player -> {
+            for(Entity e : player.getNearbyEntities(10, 256, 10)) {
+            Player target = (Player) e;
+            target.damage(2);
+            target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
+
+
+        }
             ArmorStand shuriken = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
             shuriken.setItemInHand(getItem());
             shuriken.setVisible(false);
             shuriken.setGravity(false);
             shuriken.setMarker(true);
 
+
             player.getItemInHand().setAmount(0);
 
             Location location = player.getLocation().add(player.getLocation().getDirection().multiply(10));
             Vector vector = location.subtract(player.getLocation()).toVector();
+
+
+
 
             new BukkitRunnable() {
                 final int dist = 15;
@@ -51,6 +66,13 @@ public class ShurikenAbility extends Ability {
 
                 @Override
                 public void run() {
+                    for(Entity e : player.getNearbyEntities(10, 10, 10)) {
+                        Player target = (Player) e;
+                        target.damage(2);
+                        target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
+                    }
+
+
                     shuriken.teleport(shuriken.getLocation().add(vector.normalize()));
                     if (distTraveled > dist) {
                         shuriken.remove();
@@ -59,7 +81,7 @@ public class ShurikenAbility extends Ability {
 
                     distTraveled++;
                 }
-            }.runTaskTimer(SoupPvP.getInstance(), 0L, 1L);
+            }.runTaskTimer(SoupPvP.getInstance(), 1L, 1L);
         };
     }
 }

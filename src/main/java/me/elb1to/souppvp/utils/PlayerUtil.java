@@ -22,6 +22,8 @@ public class PlayerUtil {
     public static final ItemStack PLAYER_PERKS = new ItemBuilder(Material.CHEST).name("&aPerks").build();
     public static final ItemStack EVENT_HOSTING = new ItemBuilder(Material.EMERALD).name("&aEvents").build();
 
+    public static final ItemStack KILLSTREAK_MENU = new ItemBuilder(Material.ENDER_CHEST).name("&aKillstreaks").build();
+
     public static void resetPlayer(Player player) {
         player.setGameMode(GameMode.SURVIVAL);
 
@@ -57,6 +59,7 @@ public class PlayerUtil {
         player.getInventory().setItem(2, PLAYER_PERKS);
         player.getInventory().setItem(4, new ItemBuilder(Material.SKULL_ITEM).durability(3).owner(player.getName()).name("&aYour Stats").build());
         player.getInventory().setItem(8, EVENT_HOSTING);
+        player.getInventory().setItem(5, KILLSTREAK_MENU);
 
         player.updateInventory();
     }

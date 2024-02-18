@@ -7,6 +7,7 @@ import me.elb1to.souppvp.user.ui.kit.selection.SelectKitButton;
 import me.elb1to.souppvp.utils.menu.Button;
 import me.elb1to.souppvp.utils.menu.Menu;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +32,10 @@ public class KitSelectionMenu extends Menu {
         for (Kit kit : SoupPvP.getInstance().getKitManager().getKits()) {
             buttons.put(buttons.size(), new SelectKitButton(kit, user));
         }
-        
+
         return buttons;
     }
 }
+
+
+

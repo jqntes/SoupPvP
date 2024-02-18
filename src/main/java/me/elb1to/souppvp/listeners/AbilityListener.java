@@ -1,9 +1,15 @@
 package me.elb1to.souppvp.listeners;
 
 import me.elb1to.souppvp.SoupPvP;
+import me.elb1to.souppvp.controller.SpawnController;
+import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 /**
@@ -27,5 +33,32 @@ public class AbilityListener implements Listener {
                 this.plugin.getAbilityManager().getAbilityByName("Shuriken").getCallable().execute(player);
             }
         }
+        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+            if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Poison Bomb").getItem())) {
+                this.plugin.getAbilityManager().getAbilityByName("Poison Bomb").getCallable().execute(player);
+            }
+
+
+        }
+        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+            if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Slam").getItem())) {
+                this.plugin.getAbilityManager().getAbilityByName("Slam").getCallable().execute(player);
+            }
+
+
+        }
+    }
+    @EventHandler
+    public void onDamageEntity(EntityDamageByEntityEvent event){
+        Player player = (Player) event.getEntity();
+        if (event.getDamager() == null){
+            return;
+        }
+        if (event.getDamager().getType().equals(EntityType.LIGHTNING)){
+
+        }
+
     }
 }
+
+

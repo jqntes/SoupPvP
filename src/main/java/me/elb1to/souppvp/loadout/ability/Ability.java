@@ -1,6 +1,7 @@
 package me.elb1to.souppvp.loadout.ability;
 
 import lombok.Getter;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -22,4 +23,6 @@ public abstract class Ability {
     public abstract long getCooldown();
 
     public abstract AbilityCallable getCallable();
+
+
 }
