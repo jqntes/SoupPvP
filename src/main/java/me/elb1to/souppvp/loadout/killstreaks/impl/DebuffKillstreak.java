@@ -16,6 +16,6 @@ public class DebuffKillstreak extends Killstreak {
 
     @Override
     public Killstreak getKillstreak() {
-        return null;
+        return getKillstreak();
     }
 }
