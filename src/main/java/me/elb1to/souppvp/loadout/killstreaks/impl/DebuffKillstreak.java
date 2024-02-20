@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class DebuffKillstreak extends Killstreak {
     public DebuffKillstreak() {
         super("Debuff", Material.POTION, new String[]{
-            "To recieve this killstreak you require an 5 killstreak"
+            "To recieve this killstreak you require an 5 killstreaks"
         });
     }
 
