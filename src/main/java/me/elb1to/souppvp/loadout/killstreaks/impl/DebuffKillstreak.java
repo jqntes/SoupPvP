@@ -11,9 +11,7 @@ public class DebuffKillstreak extends Killstreak {
         });
     }
 
-    public void onKill(Player player){
 
-    }
 
 
     @Override

@@ -30,7 +30,6 @@ public class GameListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-
         resetPlayer(player);
         resetHotbar(player);
 

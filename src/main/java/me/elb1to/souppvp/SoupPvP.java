@@ -18,6 +18,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
 import static me.elb1to.souppvp.utils.ColorHelper.translate;
 
 /**
@@ -47,8 +48,8 @@ public final class SoupPvP extends JavaPlugin {
 		this.saveDefaultConfig();
 
 		Bukkit.getConsoleSender().sendMessage("------------------------------------------------");
-		Bukkit.getConsoleSender().sendMessage(translate("&bSoupPvP - Lunar.GG Replica &8- &fv" + getDescription().getVersion()));
-		Bukkit.getConsoleSender().sendMessage(translate("&7Made on &bFrozed Club Development &7by &bElb1to"));
+		Bukkit.getConsoleSender().sendMessage(translate("&bHCArctic - SoupPvP has been loaded successfully &8- &fv" + getDescription().getVersion()));
+        Bukkit.getConsoleSender().sendMessage(translate("&7"));
 		Bukkit.getConsoleSender().sendMessage("------------------------------------------------");
 		this.loadManagers();
 		combatManager.runTaskTimer(this, 0, 20);
