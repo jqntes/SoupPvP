@@ -25,7 +25,7 @@ public abstract class Menu {
     private boolean closedByMenu = false;
     private boolean placeholder = false;
 
-    private Button placeholderButton = Button.placeholder(Material.STAINED_GLASS_PANE, (byte) 7, " ");
+    private Button placeholderButton = Button.placeholder(Material.STAINED_GLASS_PANE, (byte) 20, " ");
     private BukkitTask task;
 
     private ItemStack createItemStack(Player player, Button button) {

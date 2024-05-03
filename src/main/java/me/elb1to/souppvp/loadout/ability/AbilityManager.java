@@ -23,7 +23,6 @@ public class AbilityManager {
         abilities.add(new ShurikenAbility());
         abilities.add(new ChemistAbility());
         abilities.add(new StompAbility());
-        abilities.add(new PearlAbility());
     }
 
     public Ability getAbilityByName(String name) {

@@ -43,9 +43,7 @@ public class StompAbility extends Ability {
 
 
             if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
-
                 if (event.getDamage() > 4) {
-                    event.setCancelled(true);
                     player.damage(4);
                     player.getWorld().createExplosion(player.getLocation(), 0);
                 }

@@ -33,30 +33,21 @@ public class AbilityListener implements Listener {
                 this.plugin.getAbilityManager().getAbilityByName("Shuriken").getCallable().execute(player);
             }
         }
-        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (event.getAction().name().startsWith("RIGHT_")) {
             if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Poison Bomb").getItem())) {
                 this.plugin.getAbilityManager().getAbilityByName("Poison Bomb").getCallable().execute(player);
             }
 
 
         }
-        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (event.getAction().name().startsWith("RIGHT_")) {
             if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Slam").getItem())) {
                 this.plugin.getAbilityManager().getAbilityByName("Slam").getCallable().execute(player);
             }
 
 
         }
-    }
-    @EventHandler
-    public void onDamageEntity(EntityDamageByEntityEvent event){
-        Player player = (Player) event.getEntity();
-        if (event.getDamager() == null){
-            return;
-        }
-        if (event.getDamager().getType().equals(EntityType.LIGHTNING)){
 
-        }
 
     }
 }
