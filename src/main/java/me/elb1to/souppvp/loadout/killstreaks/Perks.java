@@ -5,7 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 @Getter
-public abstract class Killstreak  {
+public abstract class Perks {
 
 
     private final String[] desc;
@@ -15,7 +15,7 @@ public abstract class Killstreak  {
 
 
 
-    public Killstreak(String name, Material icon, String[] desc){
+    public Perks(String name, Material icon, String[] desc){
         this.desc = desc;
         this.icon = icon;
         this.name = name;
@@ -27,7 +27,7 @@ public abstract class Killstreak  {
 
     }
 
-    public abstract Killstreak getKillstreak();
+    public abstract Perks getKillstreak();
 
 
 }

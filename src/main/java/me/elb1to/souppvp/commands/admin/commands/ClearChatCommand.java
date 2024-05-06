@@ -4,7 +4,7 @@ import me.elb1to.souppvp.utils.command.BaseCommand;
 import me.elb1to.souppvp.utils.command.Command;
 import me.elb1to.souppvp.utils.command.CommandArgs;
 import org.bukkit.Bukkit;
-import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class ClearChatCommand extends BaseCommand {
@@ -15,22 +15,24 @@ public class ClearChatCommand extends BaseCommand {
         String[] args = command.getArgs();
         if (args.length == 0) {
             for (Player onlinePlayers : Bukkit.getOnlinePlayers()){
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
-                player.sendMessage("");
+               player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
+                player.sendMessage(ChatColor.GRAY  + "");
                 player.sendMessage("The chat has been cleared");
 
             }

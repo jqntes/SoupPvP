@@ -20,6 +20,6 @@ public class BalanceTopCommand extends BaseCommand {
         Player player = command.getPlayer();
         String[] args = command.getArgs();
 
-        // Show top 10 players with most credits.
+
     }
 }

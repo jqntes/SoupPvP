@@ -1,11 +1,10 @@
 package me.elb1to.souppvp.loadout.killstreaks.impl;
 
-import me.elb1to.souppvp.loadout.killstreaks.Killstreak;
+import me.elb1to.souppvp.loadout.killstreaks.Perks;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 
-public class DebuffKillstreak extends Killstreak {
-    public DebuffKillstreak() {
+public class DebuffPerks extends Perks {
+    public DebuffPerks() {
         super("Debuff", Material.POTION, new String[]{
             "To recieve this killstreak you require an 5 killstreaks"
         });
@@ -15,7 +14,7 @@ public class DebuffKillstreak extends Killstreak {
 
 
     @Override
-    public Killstreak getKillstreak() {
+    public Perks getKillstreak() {
         return getKillstreak();
     }
 }

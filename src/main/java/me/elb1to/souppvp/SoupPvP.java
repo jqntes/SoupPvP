@@ -4,8 +4,8 @@ import lombok.Getter;
 import me.elb1to.souppvp.controller.ClassRegistrationController;
 import me.elb1to.souppvp.controller.SpawnController;
 import me.elb1to.souppvp.database.MongoSrv;
-import me.elb1to.souppvp.loadout.killstreaks.KillstreakManager;
 import me.elb1to.souppvp.layout.ServerScoreboard;
+import me.elb1to.souppvp.loadout.killstreaks.PerksManager;
 import me.elb1to.souppvp.user.CombatManager;
 import me.elb1to.souppvp.loadout.ability.AbilityManager;
 import me.elb1to.souppvp.loadout.kit.KitManager;
@@ -40,7 +40,7 @@ public final class SoupPvP extends JavaPlugin {
 	private AbilityManager abilityManager;
 	private SpawnController spawnController;
 	private CombatManager combatManager;
-    private KillstreakManager killstreakManager;
+    private PerksManager perksManager;
 
 	@Override
 	public void onEnable() {
@@ -48,7 +48,7 @@ public final class SoupPvP extends JavaPlugin {
 		this.saveDefaultConfig();
 
 		Bukkit.getConsoleSender().sendMessage("------------------------------------------------");
-		Bukkit.getConsoleSender().sendMessage(translate("&bHCArctic - SoupPvP has been loaded successfully &8- &fv" + getDescription().getVersion()));
+		Bukkit.getConsoleSender().sendMessage(translate("&bSoupPvP has been loaded successfully &8- &fv" + getDescription().getVersion()));
         Bukkit.getConsoleSender().sendMessage(translate("&7"));
 		Bukkit.getConsoleSender().sendMessage("------------------------------------------------");
 		this.loadManagers();
@@ -81,7 +81,7 @@ public final class SoupPvP extends JavaPlugin {
 		this.abilityManager = new AbilityManager();
 		this.spawnController = new SpawnController();
 		this.combatManager = new CombatManager();
-        this.killstreakManager = new KillstreakManager();
+        this.perksManager = new PerksManager();
 	}
 
 }

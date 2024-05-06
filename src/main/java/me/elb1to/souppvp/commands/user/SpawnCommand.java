@@ -18,14 +18,19 @@ public class SpawnCommand extends BaseCommand {
     @Override @Command(name = "spawn", aliases = "s")
     public void onCommand(CommandArgs command) {
         Player player = command.getPlayer();
-        if (plugin.getCombatManager().isCombat(command.getPlayer())){
-            player.sendMessage(ColorHelper.translate("&l&7You cannot teleport to spawn whilst in combat"));
-            return;
-        }
+        if (!plugin.getCombatManager().isCombat(command.getPlayer())){
             player.teleport(player.getWorld().getSpawnLocation());
+            plugin.getCombatManager().setCombatSet(player, false);
             resetPlayer(player);
             resetHotbar(player);
             player.sendMessage(ChatColor.GRAY + "&7You have been teleported back to spawn");
+
+
+            return;
+        }
+            if (plugin.getCombatManager().isCombat(player)){
+                player.sendMessage(ChatColor.GRAY + "You cannot return to spawn due to being in combat still");
+            }
         }
 
 

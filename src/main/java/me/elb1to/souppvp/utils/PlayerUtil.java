@@ -57,7 +57,7 @@ public class PlayerUtil {
         player.getInventory().setItem(0, KIT_SELECTOR);
         player.getInventory().setItem(1, PREVIOUS_KIT);
         player.getInventory().setItem(2, PLAYER_PERKS);
-        player.getInventory().setItem(4, new ItemBuilder(Material.SKULL_ITEM).durability(3).owner(player.getName()).name("&aYour Stats").build());
+        player.getInventory().setItem(4, new ItemBuilder(Material.SKULL_ITEM).durability(3).owner(player.getName()).name("&aStatistics").build());
         player.getInventory().setItem(8, EVENT_HOSTING);
         player.getInventory().setItem(5, KILLSTREAK_MENU);
 

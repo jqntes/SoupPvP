@@ -32,14 +32,16 @@ public class ServerScoreboard implements BoardAdapter {
 
         strings.add(translate("&7&m----------------------"));
         strings.add(translate("Kills: &b" + user.getKills()));
+        strings.add(translate("Credits: &b" + user.getCredits()));
         strings.add(translate("Killstreak: &b" + user.getCurrentKillstreak()));
         strings.add(translate("Deaths: &b" + user.getDeaths()));
-        strings.add(translate("Credits: &b" + user.getCredits()));
+
+
         if (plugin.getCombatManager().isCombat(player)) {
-        strings.add(translate("&cCombat Tag&7: &f" + plugin.getCombatManager().getCombatTime(player) + "s"));
+            strings.add(translate("&cCombat Tag&7: &f" + plugin.getCombatManager().getCombatTime(player) + "s"));
         }
         strings.add(translate(" "));
-        strings.add(translate("&bme.marlinis"));
+        strings.add(translate("&bexample.net"));
         strings.add(translate("&7&m----------------------"));
 
         return strings;
