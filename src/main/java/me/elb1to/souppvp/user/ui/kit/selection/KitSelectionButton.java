@@ -54,7 +54,7 @@ public class KitSelectionButton extends Button {
             } else {
                 user.getUnlockedKits().add(kit.getName());
                 user.setCredits(user.getCredits() - kit.getPrice());
-                player.sendMessage(ColorHelper.translate("&eYou have purchased the &d" + kit.getName() + "&e kit."));
+                player.sendMessage(ColorHelper.translate("You have purchased the " + kit.getName() + " kit."));
             }
 
             return;

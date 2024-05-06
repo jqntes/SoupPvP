@@ -2,10 +2,8 @@ package me.elb1to.souppvp.listeners;
 
 import me.elb1to.souppvp.SoupPvP;
 import me.elb1to.souppvp.loadout.ability.impl.ChemistAbility;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Sound;
+import me.elb1to.souppvp.utils.ColorHelper;
+import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -35,7 +33,13 @@ public class ServerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
         event.setJoinMessage(null);
+        player.sendMessage(ColorHelper.CHAT_BAR);
+        player.sendMessage(ColorHelper.translate(ChatColor.DARK_GREEN + "Welcome to TBD Soup " ));
+        player.sendMessage(ColorHelper.translate(ChatColor.WHITE + "Make sure to respect all the rules in the discord which is provided below"));
+        player.sendMessage(ColorHelper.translate(ChatColor.DARK_GREEN + "The discord is discord.gg/link"));
+        player.sendMessage(ColorHelper.translate(ChatColor.GRAY + "This is still in early development so bugs may be visible until fixed"));
     }
 
     @EventHandler

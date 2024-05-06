@@ -12,8 +12,8 @@ import org.bukkit.potion.PotionEffect;
 
 public class WizardKit extends Kit {
     public WizardKit() {
-        super("Enderman", Material.ENDER_PEARL, new String[]{
-            "&7&oDefault PvP kit."
+        super("Wizard", Material.STICK, new String[]{
+            "Use your magic wand to spell an cast onto some nearby players or it could end up doing something else and causing some effects onto u"
             }, 0);
 
     }
@@ -35,7 +35,7 @@ public class WizardKit extends Kit {
 
     @Override
     public Ability getAbility() {
-        return SoupPvP.getInstance().getAbilityManager().getAbilityByName("Pearl");
+        return SoupPvP.getInstance().getAbilityManager().getAbilityByName("Magic Wand");
     }
 
     @Override

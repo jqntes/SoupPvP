@@ -45,7 +45,8 @@ public class DefaultKit extends Kit {
 	@Override
 	public PotionEffect[] getPotionEffects() {
 		return new PotionEffect[]{
-				new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0)
+				new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0),
+            new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 2)
 		};
 	}
 }
