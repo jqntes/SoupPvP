@@ -10,8 +10,8 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-public class EnderKit extends Kit {
-    public EnderKit() {
+public class WizardKit extends Kit {
+    public WizardKit() {
         super("Enderman", Material.ENDER_PEARL, new String[]{
             "&7&oDefault PvP kit."
             }, 0);

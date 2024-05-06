@@ -52,11 +52,11 @@ public class GameListener implements Listener {
         }
 
         if (event.getItem().equals(KIT_SELECTOR)) {
-            new KitSelectionMenu().openMenu(player);
+            new KitSelectionMenu(player).open();
         } else if (event.getItem().equals(EVENT_HOSTING)) {
             player.sendMessage("Open Events Menu");
         } else if (event.getItem().equals(PLAYER_PERKS)) {
-            new PerkViewMenu().openMenu(player);
+            new PerkViewMenu(player).open();
         } else if (event.getItem().equals(KILLSTREAK_MENU)) {
             player.sendMessage("Open Killstreaks Menu");
 

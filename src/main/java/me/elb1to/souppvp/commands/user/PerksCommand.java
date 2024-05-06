@@ -21,7 +21,7 @@ public class PerksCommand extends BaseCommand {
         Player player = command.getPlayer();
         String[] args = command.getArgs();
 
-        new PerkViewMenu().openMenu(command.getPlayer());
+        new PerkViewMenu(player).open();
 
     }
 }

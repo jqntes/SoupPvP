@@ -2,7 +2,6 @@ package me.elb1to.souppvp.loadout.ability;
 
 import lombok.Getter;
 import me.elb1to.souppvp.loadout.ability.impl.ChemistAbility;
-import me.elb1to.souppvp.loadout.ability.impl.PearlAbility;
 import me.elb1to.souppvp.loadout.ability.impl.ShurikenAbility;
 import me.elb1to.souppvp.loadout.ability.impl.StompAbility;
 

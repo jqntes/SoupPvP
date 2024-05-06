@@ -1,5 +1,6 @@
 package me.elb1to.souppvp;
 
+import gg.voided.api.menu.MenuHandler;
 import lombok.Getter;
 import me.elb1to.souppvp.controller.ClassRegistrationController;
 import me.elb1to.souppvp.controller.SpawnController;
@@ -41,6 +42,7 @@ public final class SoupPvP extends JavaPlugin {
 	private SpawnController spawnController;
 	private CombatManager combatManager;
     private PerksManager perksManager;
+    private MenuHandler menuHandler;
 
 	@Override
 	public void onEnable() {
@@ -82,6 +84,7 @@ public final class SoupPvP extends JavaPlugin {
 		this.spawnController = new SpawnController();
 		this.combatManager = new CombatManager();
         this.perksManager = new PerksManager();
+        this.menuHandler = new MenuHandler(this);
 	}
 
 }

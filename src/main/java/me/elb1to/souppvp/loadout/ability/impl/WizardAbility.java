@@ -5,8 +5,8 @@ import me.elb1to.souppvp.loadout.ability.AbilityCallable;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class PearlAbility extends Ability {
-    public PearlAbility() {
+public class WizardAbility extends Ability {
+    public WizardAbility() {
         super("Pearl", new ItemStack(Material.ENDER_PEARL, 3));
     }
 

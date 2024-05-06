@@ -3,6 +3,7 @@ package me.elb1to.souppvp.loadout.ability.impl;
 import me.elb1to.souppvp.SoupPvP;
 import me.elb1to.souppvp.loadout.ability.Ability;
 import me.elb1to.souppvp.loadout.ability.AbilityCallable;
+import me.elb1to.souppvp.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -21,7 +22,7 @@ import java.util.Iterator;
 public class StompAbility extends Ability {
 
     public StompAbility() {
-        super("Slam", new ItemStack(Material.ANVIL));
+        super("Slam", new ItemBuilder(Material.ANVIL).name("Slam").lore("Right click this to damage players in an five block radius when back on floor").build());
     }
 
     @Override

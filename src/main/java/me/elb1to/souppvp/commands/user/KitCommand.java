@@ -25,6 +25,6 @@ public class KitCommand extends BaseCommand {
             player.sendMessage(ColorHelper.translate("&cYou can't use commands whilst in combat."));
             return;
         }
-        new KitSelectionMenu().openMenu(command.getPlayer());
+        new KitSelectionMenu(player).open();
     }
 }

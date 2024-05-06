@@ -1,10 +1,12 @@
 package me.elb1to.souppvp.user.ui.perk;
 
+import gg.voided.api.menu.Menu;
+import gg.voided.api.menu.MenuSize;
 import me.elb1to.souppvp.SoupPvP;
 import me.elb1to.souppvp.loadout.killstreaks.Perks;
 import me.elb1to.souppvp.user.User;
-import me.elb1to.souppvp.utils.menu.Button;
-import me.elb1to.souppvp.utils.menu.Menu;
+import me.elb1to.souppvp.user.buttons.PlaceholderButton;
+import me.elb1to.souppvp.user.ui.perk.view.PerkViewButton;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -18,22 +20,18 @@ public class PerkViewMenu extends Menu {
     private Perks perks;
     private User user;
 
-
-
-
-    @Override
-    public String getTitle(Player player) {
-        return "Perk Options";
+    public PerkViewMenu(Player player) {
+        super("Perks", MenuSize.FOUR, player);
     }
 
+
     @Override
-    public Map<Integer, Button> getButtons(Player player) {
-        Map<Integer, Button> buttons = new HashMap<>();
-        User user = SoupPvP.getInstance().getUserManager().getByUuid(player.getUniqueId());
+    public void setupButtons() {
+        fillBorder(new PlaceholderButton());
+        User user = SoupPvP.getInstance().getUserManager().getByUuid(getPlayer().getUniqueId());
         for (Perks perks : SoupPvP.getInstance().getPerksManager().getPerks()){
-            buttons.put(buttons.size(), new PerkViewMenu().getPlaceholderButton());
+            add(new PerkViewButton(user, perks));
         }
-
-        return buttons;
     }
+
 }

@@ -22,12 +22,12 @@ public abstract class Perks {
     }
 
 
-    public void onKill(Player player){
+    public void onClickPerkInventory(Player player){
 
 
     }
 
-    public abstract Perks getKillstreak();
+    public abstract Perks getPerk();
 
 
 }
