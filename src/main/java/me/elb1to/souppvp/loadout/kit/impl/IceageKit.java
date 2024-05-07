@@ -1,5 +1,6 @@
 package me.elb1to.souppvp.loadout.kit.impl;
 
+import me.elb1to.souppvp.SoupPvP;
 import me.elb1to.souppvp.loadout.ability.Ability;
 import me.elb1to.souppvp.loadout.kit.Kit;
 import me.elb1to.souppvp.utils.ItemBuilder;
@@ -34,7 +35,7 @@ public class IceageKit extends Kit {
 
     @Override
     public Ability getAbility() {
-        return null;
+        return SoupPvP.getInstance().getAbilityManager().getAbilityByName("Igloo");
     }
 
     @Override

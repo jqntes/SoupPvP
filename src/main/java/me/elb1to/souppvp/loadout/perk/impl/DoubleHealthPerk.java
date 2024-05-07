@@ -1,6 +1,6 @@
-package me.elb1to.souppvp.loadout.perks.impl;
+package me.elb1to.souppvp.loadout.perk.impl;
 
-import me.elb1to.souppvp.loadout.perks.Perks;
+import me.elb1to.souppvp.loadout.perk.Perks;
 import org.bukkit.Material;
 
 public class DoubleHealthPerk extends Perks {

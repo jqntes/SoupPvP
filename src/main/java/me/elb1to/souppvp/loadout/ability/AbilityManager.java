@@ -2,6 +2,7 @@ package me.elb1to.souppvp.loadout.ability;
 
 import lombok.Getter;
 import me.elb1to.souppvp.loadout.ability.impl.ChemistAbility;
+import me.elb1to.souppvp.loadout.ability.impl.IglooAbility;
 import me.elb1to.souppvp.loadout.ability.impl.ShurikenAbility;
 import me.elb1to.souppvp.loadout.ability.impl.StompAbility;
 
@@ -22,6 +23,7 @@ public class AbilityManager {
         abilities.add(new ShurikenAbility());
         abilities.add(new ChemistAbility());
         abilities.add(new StompAbility());
+        abilities.add(new IglooAbility());
     }
 
     public Ability getAbilityByName(String name) {

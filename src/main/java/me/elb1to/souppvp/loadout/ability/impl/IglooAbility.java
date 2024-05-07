@@ -7,7 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class IglooAbility extends Ability {
-    public IglooAbility(String name, ItemStack item) {
+    public IglooAbility() {
         super("Igloo", new ItemBuilder(Material.ICE).name("Enclosure").lore("Right click this to box in nearby players or an enemy you are fighting inside an 10x10").build());
     }
 

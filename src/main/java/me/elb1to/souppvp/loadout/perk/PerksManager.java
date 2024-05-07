@@ -1,4 +1,4 @@
-package me.elb1to.souppvp.loadout.perks;
+package me.elb1to.souppvp.loadout.perk;
 
 import lombok.Getter;
 

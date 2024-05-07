@@ -1,7 +1,7 @@
 package me.elb1to.souppvp.user.ui.perk.view;
 
 import gg.voided.api.menu.button.Button;
-import me.elb1to.souppvp.loadout.perks.Perks;
+import me.elb1to.souppvp.loadout.perk.Perks;
 import me.elb1to.souppvp.user.User;
 import me.elb1to.souppvp.utils.ColorHelper;
 import org.bukkit.entity.Player;
