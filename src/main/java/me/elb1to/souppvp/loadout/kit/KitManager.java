@@ -23,7 +23,7 @@ public class KitManager {
         kits.add(new NinjaKit());
         kits.add(new ChemistKit());
         kits.add(new StomperKit());
-        kits.add(new EnderKit());
+        kits.add(new IceageKit());
     }
 
     public Kit getKitByName(String name) {

@@ -1,4 +1,4 @@
-package me.elb1to.souppvp.loadout.killstreaks;
+package me.elb1to.souppvp.loadout.perks;
 
 import lombok.Getter;
 

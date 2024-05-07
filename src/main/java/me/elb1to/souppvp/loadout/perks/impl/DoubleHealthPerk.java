@@ -1,6 +1,6 @@
-package me.elb1to.souppvp.loadout.killstreaks.impl;
+package me.elb1to.souppvp.loadout.perks.impl;
 
-import me.elb1to.souppvp.loadout.killstreaks.Perks;
+import me.elb1to.souppvp.loadout.perks.Perks;
 import org.bukkit.Material;
 
 public class DoubleHealthPerk extends Perks {
