@@ -18,6 +18,8 @@ public class IglooAbility extends Ability {
 
     @Override
     public AbilityCallable getCallable() {
-        return null;
+        return player -> {
+
+        };
     }
 }

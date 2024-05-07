@@ -24,6 +24,7 @@ public class User {
 
     private String currentKitName;
     private List<String> unlockedKits = new ArrayList<>();
+    private List<String> unlockedPerks = new ArrayList<>();
 
     private int kills;
     private int deaths;
@@ -36,6 +37,7 @@ public class User {
         this.uniqueId = uuid;
         this.loaded = false;
         this.unlockedKits.add("Default");
+        this.unlockedPerks.add("Default");
 
         getUserManager().loadUser(this);
     }
