@@ -5,11 +5,13 @@
 This is just a base for making a SoupPvP plugin for your server.
 
 ## Features being working on
-Killstreaks System- WIP
+Perks System - WIP
 
-Events System - TBD
+Events System - TBD in the near future
 
-Cooldown System
+Cooldown System- WIP
+
+
 
 
 
