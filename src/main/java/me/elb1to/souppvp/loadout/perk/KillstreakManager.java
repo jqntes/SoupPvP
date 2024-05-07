@@ -1,17 +1,16 @@
 package me.elb1to.souppvp.loadout.perk;
 
 import lombok.Getter;
-import me.elb1to.souppvp.loadout.perk.impl.DoubleHealthPerk;
 
 
 import java.util.ArrayList;
 import java.util.List;
 @Getter
-public class PerksManager {
+public class KillstreakManager {
 
-    private final List<Perks> perks = new ArrayList<>();
+    private final List<Killstreak> perks = new ArrayList<>();
 
-    public PerksManager(){
+    public KillstreakManager(){
         perks.add(new DoubleHealthPerk());
 
 

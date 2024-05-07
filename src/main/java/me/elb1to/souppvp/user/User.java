@@ -3,6 +3,7 @@ package me.elb1to.souppvp.user;
 import lombok.Getter;
 import lombok.Setter;
 import me.elb1to.souppvp.SoupPvP;
+import me.elb1to.souppvp.loadout.perk.Killstreak;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +25,10 @@ public class User {
 
     private String currentKitName;
     private List<String> unlockedKits = new ArrayList<>();
-    private List<String> unlockedPerks = new ArrayList<>();
+    private List<String> unlockedKillstreaks = new ArrayList<>();
 
     private int kills;
+    private Killstreak killstreak;
     private int deaths;
     private int bounty;
     private int credits;
@@ -37,7 +39,7 @@ public class User {
         this.uniqueId = uuid;
         this.loaded = false;
         this.unlockedKits.add("Default");
-        this.unlockedPerks.add("Default");
+        this.unlockedKillstreaks.add("Default");
 
         getUserManager().loadUser(this);
     }

@@ -5,7 +5,7 @@ import com.lunarclient.bukkitapi.object.LCWaypoint;
 import me.elb1to.souppvp.SoupPvP;
 import me.elb1to.souppvp.user.User;
 import me.elb1to.souppvp.user.ui.kit.KitSelectionMenu;
-import me.elb1to.souppvp.user.ui.perk.PerkViewMenu;
+import me.elb1to.souppvp.user.ui.perk.KillstreakViewMenu;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -56,9 +56,9 @@ public class GameListener implements Listener {
         } else if (event.getItem().equals(EVENT_HOSTING)) {
             player.sendMessage("Open Events Menu");
         } else if (event.getItem().equals(PLAYER_PERKS)) {
-            new PerkViewMenu(player).open();
+            player.sendMessage("");
         } else if (event.getItem().equals(KILLSTREAK_MENU)) {
-            player.sendMessage("Open Killstreaks Menu");
+            new KillstreakViewMenu(player).open();
 
 
     } else if (event.getItem().equals(PREVIOUS_KIT)) {

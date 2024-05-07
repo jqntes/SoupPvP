@@ -1,14 +1,10 @@
 package me.elb1to.souppvp.loadout.perk;
 
 import lombok.Getter;
-import me.elb1to.souppvp.loadout.ability.AbilityCallable;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-
 @Getter
-public abstract class Perks {
-
-
+public abstract class Killstreak {
     private final String[] desc;
     private final Material icon;
     private final String name;
@@ -17,19 +13,19 @@ public abstract class Perks {
 
 
 
-    public Perks(String name, Material icon, String[] desc, int requiredKills){
+    public Killstreak(String name, Material icon, String[] desc, int requiredKills){
         this.desc = desc;
         this.icon = icon;
         this.name = name;
         this.requiredKills = requiredKills;
     }
 
-    public abstract PerksCallable getCallable();
+    public abstract KillstreakCallable getCallable();
     public abstract void onClickPerkInventory(Player player);
 
 
 
-    public abstract Perks getPerk();
+    public abstract Killstreak getKillstreak();
 
 
 }

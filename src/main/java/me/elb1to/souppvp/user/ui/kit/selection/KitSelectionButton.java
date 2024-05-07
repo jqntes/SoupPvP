@@ -44,7 +44,7 @@ public class KitSelectionButton extends Button {
 
     @Override
     public void onClick(ClickType type) {
-        if (!type.equals(ClickType.RIGHT)) {
+        if (!type.equals(ClickType.LEFT)) {
             return;
         }
         Player player = menu.getPlayer();

@@ -34,6 +34,7 @@ public class ServerScoreboard implements BoardAdapter {
         strings.add(translate("Kills: &b" + user.getKills()));
         strings.add(translate("Credits: &b" + user.getCredits()));
         strings.add(translate("Killstreak: &b" + user.getCurrentKillstreak()));
+        strings.add(translate("Active Perk: &b") + user.getKillstreak().getName());
         strings.add(translate("Deaths: &b" + user.getDeaths()));
 
 

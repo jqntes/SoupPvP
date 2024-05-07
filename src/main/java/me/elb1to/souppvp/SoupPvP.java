@@ -6,7 +6,7 @@ import me.elb1to.souppvp.controller.ClassRegistrationController;
 import me.elb1to.souppvp.controller.SpawnController;
 import me.elb1to.souppvp.database.MongoSrv;
 import me.elb1to.souppvp.layout.ServerScoreboard;
-import me.elb1to.souppvp.loadout.perk.PerksManager;
+import me.elb1to.souppvp.loadout.perk.KillstreakManager;
 import me.elb1to.souppvp.user.CombatManager;
 import me.elb1to.souppvp.loadout.ability.AbilityManager;
 import me.elb1to.souppvp.loadout.kit.KitManager;
@@ -41,7 +41,7 @@ public final class SoupPvP extends JavaPlugin {
 	private AbilityManager abilityManager;
 	private SpawnController spawnController;
 	private CombatManager combatManager;
-    private PerksManager perksManager;
+    private KillstreakManager perksManager;
     private MenuHandler menuHandler;
 
 	@Override
@@ -83,7 +83,7 @@ public final class SoupPvP extends JavaPlugin {
 		this.abilityManager = new AbilityManager();
 		this.spawnController = new SpawnController();
 		this.combatManager = new CombatManager();
-        this.perksManager = new PerksManager();
+        this.perksManager = new KillstreakManager();
         this.menuHandler = new MenuHandler(this);
 	}
 
