@@ -1,7 +1,7 @@
 package me.elb1to.souppvp.commands.user;
 
 import me.elb1to.souppvp.SoupPvP;
-import me.elb1to.souppvp.user.ui.perk.PerkViewMenu;
+import me.elb1to.souppvp.user.ui.perk.KillstreakViewMenu;
 import me.elb1to.souppvp.utils.command.BaseCommand;
 import me.elb1to.souppvp.utils.command.Command;
 import me.elb1to.souppvp.utils.command.CommandArgs;
@@ -21,7 +21,7 @@ public class PerksCommand extends BaseCommand {
         Player player = command.getPlayer();
         String[] args = command.getArgs();
 
-        new PerkViewMenu(player).open();
+        new KillstreakViewMenu(player).open();
 
     }
 }

@@ -3,7 +3,7 @@ package me.elb1to.souppvp.user.ui.perk;
 import gg.voided.api.menu.Menu;
 import gg.voided.api.menu.MenuSize;
 import me.elb1to.souppvp.SoupPvP;
-import me.elb1to.souppvp.loadout.perk.Killstreak;
+import me.elb1to.souppvp.loadout.killstreak.Killstreak;
 import me.elb1to.souppvp.user.User;
 import me.elb1to.souppvp.user.buttons.PlaceholderButton;
 import me.elb1to.souppvp.user.ui.perk.view.KillstreakViewButton;
@@ -27,7 +27,7 @@ public class KillstreakViewMenu extends Menu {
     public void setupButtons() {
         fillBorder(new PlaceholderButton());
         User user = SoupPvP.getInstance().getUserManager().getByUuid(getPlayer().getUniqueId());
-        for (Killstreak killstreak : SoupPvP.getInstance().getPerksManager().getPerks()){
+        for (Killstreak killstreak : SoupPvP.getInstance().getPerksManager().getKillstreaks()){
             add(new KillstreakViewButton(user, killstreak, this));
         }
     }

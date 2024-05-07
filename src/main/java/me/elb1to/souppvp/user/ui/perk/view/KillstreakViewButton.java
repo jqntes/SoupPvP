@@ -2,7 +2,7 @@ package me.elb1to.souppvp.user.ui.perk.view;
 
 import gg.voided.api.menu.Menu;
 import gg.voided.api.menu.button.Button;
-import me.elb1to.souppvp.loadout.perk.Killstreak;
+import me.elb1to.souppvp.loadout.killstreak.Killstreak;
 import me.elb1to.souppvp.user.User;
 import me.elb1to.souppvp.utils.ColorHelper;
 import me.elb1to.souppvp.utils.ItemBuilder;

@@ -6,7 +6,7 @@ import me.elb1to.souppvp.controller.ClassRegistrationController;
 import me.elb1to.souppvp.controller.SpawnController;
 import me.elb1to.souppvp.database.MongoSrv;
 import me.elb1to.souppvp.layout.ServerScoreboard;
-import me.elb1to.souppvp.loadout.perk.KillstreakManager;
+import me.elb1to.souppvp.loadout.killstreak.KillstreakManager;
 import me.elb1to.souppvp.user.CombatManager;
 import me.elb1to.souppvp.loadout.ability.AbilityManager;
 import me.elb1to.souppvp.loadout.kit.KitManager;
@@ -58,7 +58,7 @@ public final class SoupPvP extends JavaPlugin {
 		crc.loadListeners("me.elb1to.souppvp.listeners");
 		crc.loadCommands("me.elb1to.souppvp.commands");
 
-		new BoardManager(new ServerScoreboard(), 20);
+		new BoardManager(new ServerScoreboard(), 10);
 	}
 
     @Override

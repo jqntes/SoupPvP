@@ -33,11 +33,12 @@ public class ChemistAbility extends Ability {
     @Override
     public AbilityCallable getCallable() {
         return player -> {
+
             for(Entity e : player.getNearbyEntities(10, 256, 10)) {
                 if(e instanceof Player) {
                     Player found = (Player)e;
-                    found.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 7*12, 2));
-                    found.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 7*12, 1));
+                    found.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 7*12, 2));
+                    found.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 7*12, 1));
                     player.sendMessage(ChatColor.GRAY + "You have used the chemist ability");
 
                     }
