@@ -3,6 +3,9 @@ package me.elb1to.souppvp.loadout.killstreak;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 @Getter
@@ -24,12 +27,14 @@ public abstract class Killstreak {
         this.item = item;
     }
 
-    public abstract KillstreakCallable getCallable();
     public abstract void onClickPerkInventory(Player player);
 
 
 
     public abstract Killstreak getKillstreak();
+
+   public abstract KillstreakCallable getCallable();
+
 
 
 }

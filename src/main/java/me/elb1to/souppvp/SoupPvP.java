@@ -7,6 +7,7 @@ import me.elb1to.souppvp.controller.SpawnController;
 import me.elb1to.souppvp.database.MongoSrv;
 import me.elb1to.souppvp.layout.ServerScoreboard;
 import me.elb1to.souppvp.loadout.killstreak.KillstreakManager;
+import me.elb1to.souppvp.loadout.killstreak.impl.DebuffKillstreak;
 import me.elb1to.souppvp.user.CombatManager;
 import me.elb1to.souppvp.loadout.ability.AbilityManager;
 import me.elb1to.souppvp.loadout.kit.KitManager;
@@ -17,6 +18,8 @@ import me.elb1to.souppvp.utils.scoreboard.BoardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -28,7 +31,7 @@ import static me.elb1to.souppvp.utils.ColorHelper.translate;
  * Date: 5/6/2021 @ 11:25 AM
  */
 @Getter
-public final class SoupPvP extends JavaPlugin {
+public final class SoupPvP extends JavaPlugin implements Listener {
 
 	@Getter private static SoupPvP instance;
 
@@ -86,5 +89,9 @@ public final class SoupPvP extends JavaPlugin {
         this.perksManager = new KillstreakManager();
         this.menuHandler = new MenuHandler(this);
 	}
+
+    private void loadKillstreakListeners(){
+        Bukkit.getServer().getPluginManager().registerEvents(new DebuffKillstreak(), this);
+    }
 
 }

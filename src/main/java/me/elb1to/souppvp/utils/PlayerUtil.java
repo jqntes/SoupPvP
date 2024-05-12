@@ -19,7 +19,6 @@ public class PlayerUtil {
 
     public static final ItemStack KIT_SELECTOR = new ItemBuilder(Material.ENCHANTED_BOOK).name("&aKit Selector").build();
     public static final ItemStack PREVIOUS_KIT = new ItemBuilder(Material.WATCH).name("&aSelect Previous Kit").build();
-    public static final ItemStack PLAYER_PERKS = new ItemBuilder(Material.CHEST).name("&aPerks").build();
     public static final ItemStack EVENT_HOSTING = new ItemBuilder(Material.EMERALD).name("&aEvents").build();
 
     public static final ItemStack KILLSTREAK_MENU = new ItemBuilder(Material.ENDER_CHEST).name("&aKillstreaks").build();
@@ -56,10 +55,9 @@ public class PlayerUtil {
     public static void resetHotbar(Player player) {
         player.getInventory().setItem(0, KIT_SELECTOR);
         player.getInventory().setItem(1, PREVIOUS_KIT);
-        player.getInventory().setItem(2, PLAYER_PERKS);
         player.getInventory().setItem(4, new ItemBuilder(Material.SKULL_ITEM).durability(3).owner(player.getName()).name("&aStatistics").build());
         player.getInventory().setItem(8, EVENT_HOSTING);
-        player.getInventory().setItem(5, KILLSTREAK_MENU);
+        player.getInventory().setItem(3, KILLSTREAK_MENU);
 
         player.updateInventory();
     }

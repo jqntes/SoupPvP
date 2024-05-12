@@ -24,6 +24,7 @@ public class KitManager {
         kits.add(new ChemistKit());
         kits.add(new StomperKit());
         kits.add(new IceageKit());
+        kits.add(new WizardKit());
     }
 
     public Kit getKitByName(String name) {
