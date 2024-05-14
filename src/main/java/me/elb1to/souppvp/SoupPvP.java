@@ -91,7 +91,6 @@ public final class SoupPvP extends JavaPlugin implements Listener {
 	}
 
     private void loadKillstreakListeners(){
-        Bukkit.getServer().getPluginManager().registerEvents(new DebuffKillstreak(), this);
     }
 
 }

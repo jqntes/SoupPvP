@@ -38,50 +38,48 @@ public class ShurikenAbility extends Ability {
     @Override // This ability is unfinished, so don't fuckin spam my dms.
     public AbilityCallable getCallable() {
         return player -> {
-            for(Entity e : player.getNearbyEntities(10, 256, 10)) {
-            Player target = (Player) e;
-            target.damage(2);
-            target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
-
-
-        }
             ArmorStand shuriken = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
             shuriken.setItemInHand(getItem());
             shuriken.setVisible(false);
             shuriken.setGravity(false);
             shuriken.setMarker(true);
+            for (Entity e : player.getNearbyEntities(10, 10, 10)) {
+                Player target = (Player) e;
+                target.damage(1);
+                target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
+
+                player.getItemInHand().setAmount(0);
+
+                Location location = player.getLocation().add(player.getLocation().getDirection().multiply(10));
+                Vector vector = location.subtract(player.getLocation()).toVector();
 
 
-            player.getItemInHand().setAmount(0);
+                new BukkitRunnable() {
+                    final int dist = 15;
+                    int distTraveled = 0;
 
-            Location location = player.getLocation().add(player.getLocation().getDirection().multiply(10));
-            Vector vector = location.subtract(player.getLocation()).toVector();
+                    @Override
+                    public void run() {
+                        for (Entity e : player.getNearbyEntities(10, 10, 10)) {
+                            Player target = (Player) e;
+                            target.damage(2);
+                            target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
+                        }
 
 
+                        shuriken.teleport(shuriken.getLocation().add(vector.normalize()));
+                        if (distTraveled > dist) {
+                            shuriken.remove();
+                            cancel();
+                        }
 
-
-            new BukkitRunnable() {
-                final int dist = 15;
-                int distTraveled = 0;
-
-                @Override
-                public void run() {
-                    for(Entity e : player.getNearbyEntities(10, 10, 10)) {
-                        Player target = (Player) e;
-                        target.damage(2);
-                        target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 3));
+                        distTraveled++;
                     }
-
-
-                    shuriken.teleport(shuriken.getLocation().add(vector.normalize()));
-                    if (distTraveled > dist) {
-                        shuriken.remove();
-                        cancel();
-                    }
-
-                    distTraveled++;
-                }
-            }.runTaskTimer(SoupPvP.getInstance(), 1L, 1L);
+                }.runTaskTimer(SoupPvP.getInstance(), 1L, 1L);
+            }
+            ;
         };
     }
 }
+
+

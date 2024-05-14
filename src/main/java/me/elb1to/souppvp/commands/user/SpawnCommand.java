@@ -15,7 +15,7 @@ public class SpawnCommand extends BaseCommand {
     private final SoupPvP plugin = SoupPvP.getInstance();
 
 
-    @Override @Command(name = "spawn", aliases = "s")
+    @Override @Command(name = "restart", aliases = "rst")
     public void onCommand(CommandArgs command) {
         Player player = command.getPlayer();
         if (!plugin.getCombatManager().isCombat(command.getPlayer())){

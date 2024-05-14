@@ -44,6 +44,11 @@ public class AbilityListener implements Listener {
             if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Slam").getItem())) {
                 this.plugin.getAbilityManager().getAbilityByName("Slam").getCallable().execute(player);
             }
+            if (event.getAction().name().startsWith("RIGHT_")) {
+                if (event.getItem().isSimilar(this.plugin.getAbilityManager().getAbilityByName("Flesh").getItem())){
+                    this.plugin.getAbilityManager().getAbilityByName("Flesh").getCallable().execute(player);
+                }
+            }
 
 
         }

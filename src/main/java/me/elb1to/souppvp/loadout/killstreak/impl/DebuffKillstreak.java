@@ -21,7 +21,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class DebuffKillstreak extends Killstreak implements Listener {
+public class DebuffKillstreak extends Killstreak {
     private User user;
 
     public DebuffKillstreak() {
@@ -38,21 +38,17 @@ public class DebuffKillstreak extends Killstreak implements Listener {
 
     @Override
     public Killstreak getKillstreak() {
-        return null;
+        return SoupPvP.getInstance().getPerksManager().getKillstreakByName("Wizardly");
     }
 
     @Override
     public KillstreakCallable getCallable() {
         return player -> {
-            PlayerInteractEvent event = new PlayerInteractEvent(player, Action.RIGHT_CLICK_AIR, this.getItem(), null, null);
-            Player players = (Player) event.getPlayer();
-            if (user.getCurrentKillstreak() == 5 || user.getKillstreak().getRequiredKills() == 5) {
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     Bukkit.getServer().broadcastMessage(ColorHelper.CHAT_BAR);
                     Bukkit.getServer().broadcastMessage(ColorHelper.translate(player.getDisplayName() + "has reached the killstreak of " + user.getCurrentKillstreak() + "and has received the " + getName()));
                     Bukkit.getServer().broadcastMessage(ColorHelper.CHAT_BAR);
-                    player.getInventory().setItem(1, getItem());
-
+                    player.getInventory().setItem(1, new ItemBuilder(Material.BEACON).name("Wizardly").build());
                         for (Entity e : player.getNearbyEntities(10, 10, 10)) {
                             Player found = (Player) e;
                             found.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 8 * 12, 0));
@@ -63,10 +59,10 @@ public class DebuffKillstreak extends Killstreak implements Listener {
                         }
                     }
 
-                }
+                };
 
             }
             ;
         };
-    }
+
 

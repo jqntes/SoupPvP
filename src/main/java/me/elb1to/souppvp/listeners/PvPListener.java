@@ -98,12 +98,6 @@ public class PvPListener implements Listener {
         Player player = event.getPlayer();
         Player attacker = event.getAttacker();
 
-        if (LunarClientAPI.getInstance().isRunningLunarClient(player)) {
-            LunarClientAPI.getInstance().sendPacket(player, new LCPacketCooldown("Combat Cooldown", 16000, Material.BARRIER.getId()));
-        }
-        if (LunarClientAPI.getInstance().isRunningLunarClient(attacker)) {
-            LunarClientAPI.getInstance().sendPacket(attacker, new LCPacketCooldown("Combat Cooldown", 16000, Material.BARRIER.getId()));
-        }
     }
 
     @EventHandler

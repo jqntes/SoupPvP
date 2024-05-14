@@ -37,10 +37,11 @@ public class KillstreakListener implements Listener {
         if (event.getItem() == null) {
             return;
         }
-
         if (event.getAction().name().startsWith("RIGHT_")) {
             if (event.getItem().isSimilar(this.plugin.getPerksManager().getKillstreakByName("Wizardly").getItem())){
                 this.plugin.getPerksManager().getKillstreakByName("Wizardly").getCallable().execute(player);
+        }
+
             }
 
             }
@@ -49,5 +50,5 @@ public class KillstreakListener implements Listener {
 
 
 
-}
+
 

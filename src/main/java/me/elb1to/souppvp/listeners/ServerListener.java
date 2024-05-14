@@ -23,6 +23,7 @@ import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scoreboard.*;
 import org.bukkit.util.Vector;
 
 /**
@@ -37,7 +38,13 @@ public class ServerListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         event.setJoinMessage(null);
-    }
+        ScoreboardManager sm = Bukkit.getScoreboardManager();
+        Scoreboard s = sm.getNewScoreboard();
+            Objective h = s.registerNewObjective("showhealth", Criterias.HEALTH);
+            h.setDisplaySlot(DisplaySlot.BELOW_NAME);
+            h.setDisplayName(ChatColor.DARK_RED + "❤");
+        }
+
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {

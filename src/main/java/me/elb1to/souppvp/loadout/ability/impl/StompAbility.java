@@ -11,6 +11,7 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -20,9 +21,11 @@ import org.bukkit.util.Vector;
 import java.util.Iterator;
 
 public class StompAbility extends Ability {
+    private EntityDamageEvent event;
+    private PlayerInteractEvent event1;
 
     public StompAbility() {
-        super("Slam", new ItemBuilder(Material.ANVIL).name("Slam").lore("Right click this to damage players in an five block radius when back on floor").build());
+        super("Slam", new ItemBuilder(Material.ANVIL).name("&9Slam").lore("Right click this to damage players in an five block radius when back on floor").build());
     }
 
     @Override
@@ -34,35 +37,40 @@ public class StompAbility extends Ability {
     public AbilityCallable getCallable() {
 
         return player -> {
-            EntityDamageEvent event = (EntityDamageEvent) player.getPlayer();
             if (!(event.getEntity() instanceof Player)) {
                 return;
 
+            }
+            if (event1.getAction() == Action.RIGHT_CLICK_BLOCK){
+                player.setVelocity(player.getLocation().getDirection().multiply(4));
+            }
+                if (event.getCause() == EntityDamageEvent.DamageCause.FALL){
+                    if (event.getDamage() < 4){
+                        event.setCancelled(true);
+                        player.damage(4);
+                        player.getWorld().createExplosion(player.getLocation(), 0);
+
+
+                    }
+                    for (Entity entity : player.getNearbyEntities(0.5, 0.5, 1)){
+                        if (entity instanceof Player) {
+                            Player target = (Player) entity;
+                            if (target.isSneaking()) {
+                                target.damage(event.getDamage() / 2, player);
+                            } else {
+                                target.damage(event.getDamage(), player);
+                            }
+                        } else if (entity instanceof LivingEntity) {
+                            LivingEntity target = (LivingEntity) entity;
+                            target.damage(event.getDamage(), player);
+                    }
+                }
             }
 
 
 
 
-            if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
-                if (event.getDamage() > 4) {
-                    player.damage(4);
-                    player.getWorld().createExplosion(player.getLocation(), 0);
-                }
 
-                for (Entity entity : player.getNearbyEntities(5.0D, 1.0D, 5.0D)) {
-
-                    if (entity instanceof Player) {
-                        Player target = (Player) entity;
-                        if (target.isSneaking()) {
-                            target.damage(event.getDamage() / 2, player);
-                        } else {
-                            target.damage(event.getDamage(), player);
-                        }
-                    } else if (entity instanceof LivingEntity) {
-                        LivingEntity target = (LivingEntity) entity;
-                        target.damage(event.getDamage(), player);
-                        return;
-                    }
 
 
                 }
@@ -70,5 +78,4 @@ public class StompAbility extends Ability {
             }
 
         };
-    }
-}
+

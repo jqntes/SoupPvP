@@ -19,7 +19,7 @@ public class KillstreakManager {
 
     public Killstreak getKillstreakByName(String name) {
         for (Killstreak killstreak : killstreaks) {
-            if (name.equals(killstreak.getKillstreak().getName())) {
+            if (name.equals(killstreak.getName())) {
                 return killstreak;
             }
         }

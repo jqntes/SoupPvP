@@ -25,6 +25,9 @@ public class KitManager {
         kits.add(new StomperKit());
         kits.add(new IceageKit());
         kits.add(new WizardKit());
+        kits.add(new TankKit());
+        kits.add(new ZombieKit());
+        kits.add(new GhostKit());
     }
 
     public Kit getKitByName(String name) {
