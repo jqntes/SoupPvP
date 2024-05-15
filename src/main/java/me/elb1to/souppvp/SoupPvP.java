@@ -6,8 +6,6 @@ import me.elb1to.souppvp.controller.ClassRegistrationController;
 import me.elb1to.souppvp.controller.SpawnController;
 import me.elb1to.souppvp.database.MongoSrv;
 import me.elb1to.souppvp.layout.ServerScoreboard;
-import me.elb1to.souppvp.loadout.killstreak.KillstreakManager;
-import me.elb1to.souppvp.loadout.killstreak.impl.DebuffKillstreak;
 import me.elb1to.souppvp.user.CombatManager;
 import me.elb1to.souppvp.loadout.ability.AbilityManager;
 import me.elb1to.souppvp.loadout.kit.KitManager;
@@ -44,7 +42,6 @@ public final class SoupPvP extends JavaPlugin implements Listener {
 	private AbilityManager abilityManager;
 	private SpawnController spawnController;
 	private CombatManager combatManager;
-    private KillstreakManager perksManager;
     private MenuHandler menuHandler;
 
 	@Override
@@ -61,7 +58,7 @@ public final class SoupPvP extends JavaPlugin implements Listener {
 		crc.loadListeners("me.elb1to.souppvp.listeners");
 		crc.loadCommands("me.elb1to.souppvp.commands");
 
-		new BoardManager(new ServerScoreboard(), 10);
+		new BoardManager(new ServerScoreboard(), 20);
 	}
 
     @Override
@@ -86,11 +83,8 @@ public final class SoupPvP extends JavaPlugin implements Listener {
 		this.abilityManager = new AbilityManager();
 		this.spawnController = new SpawnController();
 		this.combatManager = new CombatManager();
-        this.perksManager = new KillstreakManager();
         this.menuHandler = new MenuHandler(this);
 	}
 
-    private void loadKillstreakListeners(){
-    }
 
 }

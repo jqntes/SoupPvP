@@ -21,7 +21,7 @@ public class PlayerUtil {
     public static final ItemStack PREVIOUS_KIT = new ItemBuilder(Material.WATCH).name("&aSelect Previous Kit").build();
     public static final ItemStack EVENT_HOSTING = new ItemBuilder(Material.EMERALD).name("&aEvents").build();
 
-    public static final ItemStack KILLSTREAK_MENU = new ItemBuilder(Material.ENDER_CHEST).name("&aKillstreaks").build();
+    public static final ItemStack TOKEN_MENU = new ItemBuilder(Material.BEACON).name("&aToken Shop").build();
 
     public static void resetPlayer(Player player) {
         player.setGameMode(GameMode.SURVIVAL);
@@ -57,7 +57,7 @@ public class PlayerUtil {
         player.getInventory().setItem(1, PREVIOUS_KIT);
         player.getInventory().setItem(4, new ItemBuilder(Material.SKULL_ITEM).durability(3).owner(player.getName()).name("&aStatistics").build());
         player.getInventory().setItem(8, EVENT_HOSTING);
-        player.getInventory().setItem(3, KILLSTREAK_MENU);
+        player.getInventory().setItem(3, TOKEN_MENU);
 
         player.updateInventory();
     }
@@ -82,7 +82,7 @@ public class PlayerUtil {
             "&e Killstreak: &6" + user.getCurrentKillstreak(),
             "&e Highest Killstreak: &6" + user.getHighestKillstreak(),
             "&e Credits: &a" + user.getCredits(),
-            "&e Bounty: &c" + user.getBounty(),
+            "&e Bounty: &c" + user.getTokens(),
             "&7&m-----------------------------------------------------"
         };
 

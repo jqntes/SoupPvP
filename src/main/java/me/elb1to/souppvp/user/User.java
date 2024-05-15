@@ -3,7 +3,6 @@ package me.elb1to.souppvp.user;
 import lombok.Getter;
 import lombok.Setter;
 import me.elb1to.souppvp.SoupPvP;
-import me.elb1to.souppvp.loadout.killstreak.Killstreak;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +25,10 @@ public class User {
     private String currentKitName;
     private List<String> unlockedKits = new ArrayList<>();
     private List<String> unlockedKillstreaks = new ArrayList<>();
-    private Killstreak killstreak;
+
     private int kills;
     private int deaths;
-    private int bounty;
+    private int tokens;
     private int credits;
     private int currentKillstreak;
     private int highestKillstreak;

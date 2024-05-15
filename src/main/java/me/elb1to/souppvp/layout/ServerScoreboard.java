@@ -43,9 +43,11 @@ public class ServerScoreboard implements BoardAdapter {
 
         strings.add(translate("&7&m----------------------"));
         strings.add(translate("&fKills: &9" + user.getKills()));
+        strings.add(translate("&fDeaths: &9" + user.getDeaths()));
         strings.add(translate("&fCredits: &9" + user.getCredits()));
         strings.add(translate("&fKillstreak: &9" + user.getCurrentKillstreak()));
-        strings.add(translate("&fDeaths: &9" + user.getDeaths()));
+        strings.add("&fBounty: &9" + user.getBounty());
+        strings.add("Active Perk: " + user.getUnlockedPerks().add(""));
 
 
         if (plugin.getCombatManager().isCombat(player)) {
