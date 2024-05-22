@@ -1,4 +1,6 @@
 package me.elb1to.souppvp.cooldown;
 
-public class CooldownManager {
+import org.bukkit.scheduler.BukkitRunnable;
+
+public class CooldownManager extends BukkitRunnable {
 }
