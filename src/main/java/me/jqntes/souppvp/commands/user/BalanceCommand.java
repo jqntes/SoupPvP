@@ -1,0 +1,45 @@
+package me.jqntes.souppvp.commands.user;
+
+import me.jqntes.souppvp.SoupPvP;
+import me.jqntes.souppvp.user.User;
+import me.jqntes.souppvp.utils.ColorHelper;
+import me.jqntes.souppvp.utils.command.BaseCommand;
+import me.jqntes.souppvp.utils.command.Command;
+import me.jqntes.souppvp.utils.command.CommandArgs;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+/**
+ * Created by Elb1to
+ * Project: SoupPvP
+ * Date: 5/6/2021 @ 9:57 PM
+ */
+public class BalanceCommand extends BaseCommand {
+
+    private final SoupPvP plugin = SoupPvP.getInstance();
+
+    @Override @Command(name = "balance", aliases = {"bal", "credits", "creds"})
+    public void onCommand(CommandArgs command) {
+        Player player = command.getPlayer();
+        String[] args = command.getArgs();
+
+        if (args.length == 0) {
+            player.sendMessage(ColorHelper.translate("&eBalance: &a" + this.plugin.getUserManager().getByUuid(player.getUniqueId()).getCredits()));
+            return;
+        }
+
+        Player target = Bukkit.getPlayer(args[0]);
+        if (target == null) {
+            player.sendMessage(ColorHelper.translate("&cThere are no players named '" + args[0] + "' online."));
+            return;
+        }
+
+        User targetUser = SoupPvP.getInstance().getUserManager().getByUuid(target.getUniqueId());
+        if (targetUser == null) {
+            player.sendMessage(ColorHelper.translate("&c" + target.getName() + " doesn't have data stored."));
+            return;
+        }
+
+        player.sendMessage(ColorHelper.translate("&e" + target.getName() + "'s Balance: &a" + targetUser.getCredits()));
+    }
+}

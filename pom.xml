@@ -28,25 +28,28 @@
             <id>destroystokyo-releases</id>
             <url>https://repo.destroystokyo.com/repository/maven-releases/</url>
         </repository>
-
+        <repository>
+            <id>j4c0b3y-public</id>
+            <url>https://repo.j4c0b3y.net/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <!-- Spigot 1.8.8 -->
         <dependency>
             <groupId>org.github.paperspigot</groupId>
-            <artifactId>paperspigot-api</artifactId>
+            <artifactId>paperspigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/PaperSpigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/libs/paperspigot-1.8.8.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>gg.voided.menuapi</groupId>
-            <artifactId>MenuAPI</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/MenuAPI-1.0.jar</systemPath>
+            <groupId>net.j4c0b3y</groupId>
+            <artifactId>MenuAPI-core</artifactId>
+            <version>1.5.1</version>
+            <scope>provided</scope>
         </dependency>
+
         <!-- LunarClient API -->
         <dependency>
             <groupId>com.lunarclient</groupId>

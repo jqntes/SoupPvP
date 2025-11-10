@@ -1,0 +1,45 @@
+package me.jqntes.souppvp.loadout.kit.impl;
+
+import me.jqntes.souppvp.SoupPvP;
+import me.jqntes.souppvp.loadout.ability.Ability;
+import me.jqntes.souppvp.loadout.kit.Kit;
+import me.jqntes.souppvp.utils.ItemBuilder;
+import org.bukkit.Color;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+
+public class WizardKit extends Kit {
+    public WizardKit() {
+        super("Wizard", Material.STICK, new String[]{
+            "Use your magic wand to spell an cast onto some nearby players or it could end up doing something else and causing some effects onto u"
+            }, 0);
+
+    }
+
+    @Override
+    public ItemStack[] getArmor() {
+         return new ItemStack[]{
+            new ItemBuilder(Material.LEATHER_BOOTS).color(Color.AQUA).enchantment(Enchantment.DURABILITY, 20).enchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2).build(),
+            new ItemBuilder(Material.LEATHER_LEGGINGS).color(Color.AQUA).enchantment(Enchantment.DURABILITY, 20).enchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2).build(),
+            new ItemBuilder(Material.LEATHER_CHESTPLATE).color(Color.AQUA).enchantment(Enchantment.DURABILITY, 20).enchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2).build(),
+            new ItemBuilder(Material.LEATHER_HELMET).color(Color.AQUA).enchantment(Enchantment.DURABILITY, 20).enchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2).build()
+        };
+    }
+
+    @Override
+    public ItemStack getSword() {
+        return new ItemBuilder(Material.IRON_SWORD).build();
+    }
+
+    @Override
+    public Ability getAbility() {
+        return SoupPvP.getInstance().getAbilityManager().getAbilityByName("Magic Wand");
+    }
+
+    @Override
+    public PotionEffect[] getPotionEffects() {
+        return new PotionEffect[0];
+    }
+}

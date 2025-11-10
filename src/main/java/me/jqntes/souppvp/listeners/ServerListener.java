@@ -1,0 +1,94 @@
+package me.jqntes.souppvp.listeners;
+
+import me.jqntes.souppvp.user.User;
+import org.bukkit.*;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.event.entity.ExplosionPrimeEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerPortalEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.scoreboard.*;
+
+/**
+ * Created by Elb1to
+ * Project: SoupPvP
+ * Date: 5/6/2021 @ 5:02 PM
+ */
+public class ServerListener implements Listener {
+
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        event.setJoinMessage(null);
+        ScoreboardManager sm = Bukkit.getScoreboardManager();
+        Scoreboard s = sm.getNewScoreboard();
+            Objective h = s.registerNewObjective("showhealth", Criterias.HEALTH);
+            h.setDisplaySlot(DisplaySlot.BELOW_NAME);
+            h.setDisplayName(ChatColor.DARK_RED + "❤");
+        }
+
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        event.setQuitMessage(null);
+    }
+
+    @EventHandler
+    public void onBlockPlace(BlockPlaceEvent event) {
+        if (event.getPlayer().getGameMode() != GameMode.CREATIVE) {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent event) {
+        if (event.getPlayer().getGameMode() != GameMode.CREATIVE) {
+            event.setCancelled(true);
+
+
+        }
+
+
+
+
+}
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent event){
+        Player player = event.getEntity();
+        User user = (User) player.getPlayer();
+            if (player.isDead()){
+                user.setCurrentKillstreak(0);
+            }
+        }
+
+    @EventHandler
+    public void onExplosion(ExplosionPrimeEvent event) {
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onFoodConsumption(FoodLevelChangeEvent event) {
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onPortalEnter(PlayerPortalEvent event) {
+        event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onMobSpawn(CreatureSpawnEvent event) {
+        if (event.getEntityType() != EntityType.ARMOR_STAND) {
+            event.setCancelled(true);
+        }
+    }
+}
